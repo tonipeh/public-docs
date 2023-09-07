@@ -1,7 +1,7 @@
 # ALZ Bicep configuration guide
 
 This guide is for creating a new Azure Landing Zones (ALZ) - Bicep environment using GitHub actions and a hub-and-spoke network topology instead of a virtual WAN.  
-guide focuses on adjusting parameters to reduce costs by excluding certain components and lowering the SKU of others.
+Guide focuses on adjusting parameters to reduce costs by excluding certain components and lowering the SKU of others.
 The upstream release version used is v0.15.0.
 
 ## 1) Prerequisites
@@ -82,7 +82,7 @@ git push -u origin main
 Delete the `github\workflows\alz-bicep-4b.yml` file, as we are not using the virtual WAN.  
 Note that Microsoft Defender for Cloud plans are enabled by default, and we are not disabling them here.  
 If you want to disable Microsoft telemetry tracking, you can do it in VS Code by finding and replacing every instance (Ctrl+Shift+H) of the parTelemetryOptOut parameter set to false with true:  
-```json
+```shell
 //from
 "parTelemetryOptOut": {
       "value": false
@@ -92,7 +92,7 @@ If you want to disable Microsoft telemetry tracking, you can do it in VS Code by
 ```
 Modify parameter files to minimize costs. Keep in mind that all Microsoft Defender for Cloud plans are deployed by default and are not modified here:
 
-```json
+```shell
 //config\custom-parameters\alzDefaultPolicyAssignments.parameters.all.json
 "parLogAnalyticsWorkspaceLogRetentionInDays": {
   "value": "30"
