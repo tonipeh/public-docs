@@ -81,7 +81,7 @@ git push -u origin main
 
 Delete the `github\workflows\alz-bicep-4b.yml` file, as we are not using the virtual WAN.  
 Note that Microsoft Defender for Cloud plans are enabled by default, and we are not disabling them here.  
-If you want to disable Microsoft telemetry tracking, you can do it in VS Code by finding and replacing every instance (Ctrl+Shift+H) of the parTelemetryOptOut parameter set to false with true:  
+If you want to disable Microsoft telemetry tracking, you can do it in VS Code by finding and replacing every instance (Ctrl+Shift+H) of the parTelemetryOptOut parameter set false to true:  
 ```powershell
 //from
 "parTelemetryOptOut": {
