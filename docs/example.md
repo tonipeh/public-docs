@@ -1,3 +1,5 @@
+theme: minima
+
 # My Awesome Markdown Document
 
 ## Introduction
