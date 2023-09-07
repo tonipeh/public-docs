@@ -1,5 +1,5 @@
 # Welcome to My GitHub Pages Site!
 
-## Projects
+## Documents
 
-- [example](https://tonipeh.github.io/public-docs/example)
+- [example file](https://tonipeh.github.io/public-docs/example)
