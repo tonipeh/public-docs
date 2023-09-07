@@ -20,7 +20,7 @@ The upstream release version used is v0.15.0.
 Begin by creating a new folder for your ALZ environment, which you will initialize as a Git repository.  
 Modify the prompt answers to match your environment.
 
-```shell
+```powershell
 Test-ALZRequirement // If there is some missing requirements, install them
 
 PS C:\Users\john.doe\repos\project1\alz-bicep> New-ALZEnvironment -o .\
@@ -82,7 +82,7 @@ git push -u origin main
 Delete the `github\workflows\alz-bicep-4b.yml` file, as we are not using the virtual WAN.  
 Note that Microsoft Defender for Cloud plans are enabled by default, and we are not disabling them here.  
 If you want to disable Microsoft telemetry tracking, you can do it in VS Code by finding and replacing every instance (Ctrl+Shift+H) of the parTelemetryOptOut parameter set to false with true:  
-```shell
+```powershell
 //from
 "parTelemetryOptOut": {
       "value": false
@@ -92,7 +92,7 @@ If you want to disable Microsoft telemetry tracking, you can do it in VS Code by
 ```
 Modify parameter files to minimize costs. Keep in mind that all Microsoft Defender for Cloud plans are deployed by default and are not modified here:
 
-```shell
+```bash
 //config\custom-parameters\alzDefaultPolicyAssignments.parameters.all.json
 "parLogAnalyticsWorkspaceLogRetentionInDays": {
   "value": "30"
