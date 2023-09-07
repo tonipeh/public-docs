@@ -66,7 +66,7 @@ C:\Users\john.doe\repos\project1\alz-bicep\config\custom-parameters\vwanConnecti
 ## 3) Set up version control and make initial commit
 Create repository to Github and then run the following commands to push the code to the repository:
 
-```shell
+```powershell
 # Match the remote URL with the repository you created on GitHub.
 git remote add origin https://github.com/yourgithuborg/alz-bicep.git
 # Adds all changes in the working directory to the staging area.
@@ -92,7 +92,7 @@ If you want to disable Microsoft telemetry tracking, you can do it in VS Code by
 ```
 Modify parameter files to minimize costs. Keep in mind that all Microsoft Defender for Cloud plans are deployed by default and are not modified here:
 
-```bash
+```powershell
 //config\custom-parameters\alzDefaultPolicyAssignments.parameters.all.json
 "parLogAnalyticsWorkspaceLogRetentionInDays": {
   "value": "30"
@@ -131,7 +131,7 @@ Modify parameter files to minimize costs. Keep in mind that all Microsoft Defend
 Please ensure you are logged in as a global admin user with the elevated User Access Administrator role (not as a guest user) to be able to grant access to the root scope.  
 Run the following command e.g. in the Azure Cloud Shell:
 
-```shell
+```powershell
 $spnName = "sp-test-alzbicep"
 $newSPJson = az ad sp create-for-rbac -n $spnName --role Owner --scopes '/'
 $newSP = $newSPJson | ConvertFrom-Json
@@ -177,7 +177,7 @@ As a quick fix, I updated the Automation Account API version within the module i
 resource resAutomationAccount 'Microsoft.Automation/automationAccounts@2022-08-08' = {
 ```
 I encountered a second problem where every subscription generated an error message:
-```shell
+```powershell
 Status Message: The subscription
      | 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' is not registered to use
      | microsoft.insights. (Code:Conflict) 
@@ -209,7 +209,7 @@ This one does just the subscription placement under management groups. Platform 
 ALZ has many policy assignments enabled by default, so it would be wise to evaluate the policies before placing production subscriptions under the management groups.
 Subscription placement under an online management group can be done like this:
 
-```json
+```powershell
 //config\custom-parameters\subPlacementAll.parameters.all.json
 "value": [
   "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
